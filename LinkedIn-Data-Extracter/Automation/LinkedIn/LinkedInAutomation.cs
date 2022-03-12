@@ -241,22 +241,27 @@ namespace LinkedIn_Data_Extracter
 
                     Thread.Sleep(3000);
                     _salesNavigatorFilters.ExpandSearch();
+
+                    //company filter
+                    if (!string.IsNullOrEmpty(profiledetails.CompanyName))
+                    {
+                        bool exists = _salesNavigatorFilters.BuildFilterCompany(profiledetails.CompanyName);
+                        if (!exists)
+                        {
+                            continue;
+                        }
+                    }
+
                     //keywords filter
                     if (!string.IsNullOrEmpty(profiledetails.KeyWords))
                     {
                         _salesNavigatorFilters.BuildFilterKeyWords(profiledetails.KeyWords);
                     }
-                    
+
                     //location/geography filter
                     if (!string.IsNullOrEmpty(profiledetails.LocationName))
                     {
                         _salesNavigatorFilters.BuildFilterLocation(profiledetails.LocationName);
-                    }
-
-                    //company filter
-                    if (!string.IsNullOrEmpty(profiledetails.CompanyName))
-                    {
-                        _salesNavigatorFilters.BuildFilterCompany(profiledetails.CompanyName);
                     }
 
                     //industry filter
@@ -416,7 +421,7 @@ namespace LinkedIn_Data_Extracter
                         try
                         {
                             string fullTitleWithCompany = _webDriver.FindElement(By.XPath("//ol[contains(@class,'artdeco-list')]/li[" + i + "]/div/div/div[2]/div/div/div/div[2]/div[2]")).Text;
-                            profile.EmployeeCompany = fullTitleWithCompany.Replace(profile.EmployeeTitle,"").Trim();
+                            profile.EmployeeCompany = fullTitleWithCompany.Replace(profile.EmployeeTitle, "").Trim();
                         }
                         catch (Exception ex)
                         {
@@ -453,7 +458,7 @@ namespace LinkedIn_Data_Extracter
                             if (nextbutton.Displayed)
                             {
                                 IsNextButton = true;
-				nextbutton.SendKeys(Keys.Enter);
+                                nextbutton.SendKeys(Keys.Enter);
                                 Thread.Sleep(4000);
                             }
                             else
@@ -481,7 +486,7 @@ namespace LinkedIn_Data_Extracter
             System.Threading.Thread.Sleep(1000);
 
             IWebElement ele = webDriver.FindElement(By.XPath("//div[contains(@class,'_bulk-save-checkbox-spacing')]/input"));
-            
+
             webDriver.ExecuteJavaScript("arguments[0].click()", ele);
             Thread.Sleep(2000);
 

@@ -43,17 +43,28 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
             }
         }
 
-        public void BuildFilterCompany(string company)
+        public bool BuildFilterCompany(string company)
         {
             try
             {
                 ExpandBlockFilter("Current Company");
                 PasteIntoFilter("Add current companies", company.Trim());
-                ClickFilterList();
+                bool exists = ComponayExisits(company.Trim());
+                if (exists)
+                {
+                    ClickFilterList();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
             catch (System.Exception ex)
             {
                 Console.WriteLine("Unable to find comapny {0} with exception :-", company, ex);
+                return false;
             }
         }
 
@@ -63,6 +74,7 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
             {
                 ExpandBlockFilter("Geography");
                 PasteIntoFilter("Add locations", location.Trim());
+                Thread.Sleep(1000);
                 ClickFilterList();
             }
             catch (Exception ex)
@@ -80,6 +92,7 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
                 foreach (string function in functionsArray)
                 {
                     PasteIntoFilter("Add functions", function.Trim());
+                    Thread.Sleep(2000);
                     ClickFilterList();
                 }
             }
@@ -99,6 +112,7 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
                 foreach (string title in titleArray)
                 {
                     PasteIntoFilter("Add titles", title.Trim());
+                    Thread.Sleep(2000);
                     ClickFilterList();
                 }
             }
@@ -118,6 +132,7 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
                 foreach (string industry in industryArray)
                 {
                     PasteIntoFilter("Add industries", industry.Trim());
+                    Thread.Sleep(2000);
                     ClickFilterList();
                 }
             }
@@ -136,6 +151,22 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
         private void PasteIntoFilter(string placeholderName, string filterValue)
         {
             _webDriver.FindElement(By.XPath($"//input[@placeholder='{placeholderName}']")).SendKeys(filterValue);
+        }
+
+        private bool ComponayExisits(string companyName)
+        {
+            bool exisits = false;
+            Thread.Sleep(3000);
+            var webElements = _webDriver.FindElements(By.XPath($"//ul[contains(@data-test-search-filter-typeahead,'suggestions-list')]//li"));
+            foreach (IWebElement webElement in webElements)
+            {
+                exisits = webElement.Text.Contains(companyName);
+                if (exisits)
+                {
+                    break;
+                }
+            }
+            return exisits;
         }
 
         private void ClickFilterList()
