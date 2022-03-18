@@ -71,8 +71,10 @@ namespace LinkedIn_Data_Extracter.Automation.LinkedIn
         public void BuildFilterLocation(string location)
         {
             try
-            {
-                ExpandBlockFilter("Geography");
+            {   
+                Thread.Sleep(1000);
+                var locationelements = _webDriver.FindElements(By.XPath($"//legend/div[contains(string(),'Geography')]//parent::legend//following-sibling::button"));
+                locationelements[1].Click();
                 PasteIntoFilter("Add locations", location.Trim());
                 Thread.Sleep(1000);
                 ClickFilterList();
