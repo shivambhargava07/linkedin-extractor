@@ -38,3 +38,6 @@ D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\o
 D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\obj\Debug\netcoreapp3.1\LinkedIn-Data-Extracter.dll
 D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\obj\Debug\netcoreapp3.1\LinkedIn-Data-Extracter.pdb
 D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\obj\Debug\netcoreapp3.1\LinkedIn-Data-Extracter.genruntimeconfig.cache
+D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\obj\Debug\netcoreapp3.1\LinkedIn-Data-Extracter.csproj.AssemblyReference.cache
+D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+D:\PersonalData\Person\Projects\Git\linkedin-extractor\LinkedIn-Data-Extracter\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zLzEZkoC51+QZAMULQYhZiqcZKdRi7nnSsdT7ye35oDNk/IiR1dgt94hgEmNeVfBYvpBX2tOd5oRUzfnxzq+MQ==",
+  "dgSpecHash": "I32e23N+PgHnEVeDUDvW/MOQ+CPEE7snA8ryDv1kZa16fkIRcafYaID+ykbl9KAaPitxUmmk5A2n0+DfgnRfKQ==",
   "success": true,
   "projectFilePath": "D:\\PersonalData\\Person\\Projects\\Git\\linkedin-extractor\\LinkedIn-Data-Extracter\\LinkedIn-Data-Extracter.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\ShivamBhargava\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\ShivamBhargava\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
@@ -113,7 +114,7 @@
       "message": "LinkedIn-Data-Extracter depends on Selenium.WebDriver.ChromeDriver (>= 99.0.4844.51) but Selenium.WebDriver.ChromeDriver 99.0.4844.51 was not found. An approximate best match of Selenium.WebDriver.ChromeDriver 99.0.4844.5100 was resolved.",
       "libraryId": "Selenium.WebDriver.ChromeDriver",
       "targetGraphs": [
-        "net6.0"
+        ".NETCoreApp,Version=v3.1"
       ]
     }
   ]
